@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Contextos</h2>
+
+  <ul>
+    <li *ngFor="let contexto of contextos">
+      {{ contexto.name }}
+      <div>
+        <button (click)="editContexto(contexto)">Editar</button>
+        <button (click)="removeContexto(contexto.id)">Remover</button>
+      </div>
+    </li>
+  </ul>
+
+  <form (ngSubmit)="addContexto()">  <!-- Garante que o formulário não submeta o form e chama o método -->
+    <input [(ngModel)]="newContexto" placeholder="Adicionar ou Editar contexto" name="contexto" />
+    <button type="submit">{{ editingContextoId ? 'Editar' : 'Adicionar' }}</button> <!-- Type submit -->
+  </form>
+</div>
+
+
+
+
+  
